@@ -12,6 +12,7 @@
 		FD5C08A2201A60AF00088A18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C08A0201A60AF00088A18 /* Main.storyboard */; };
 		FD5C08A4201A60AF00088A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD5C08A3201A60AF00088A18 /* Assets.xcassets */; };
 		FD5C08A7201A60AF00088A18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C08A5201A60AF00088A18 /* LaunchScreen.storyboard */; };
+		FDE51B35201CB800006041D5 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE51B34201CB800006041D5 /* RepoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FD5C08A3201A60AF00088A18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD5C08A6201A60AF00088A18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD5C08A8201A60AF00088A18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDE51B34201CB800006041D5 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				FD5C089C201A60AF00088A18 /* AppDelegate.swift */,
 				FD5C089E201A60AF00088A18 /* ViewController.swift */,
+				FDE51B34201CB800006041D5 /* RepoTableViewCell.swift */,
 				FD5C08A0201A60AF00088A18 /* Main.storyboard */,
 				FD5C08A3201A60AF00088A18 /* Assets.xcassets */,
 				FD5C08A5201A60AF00088A18 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			files = (
 				FD5C089F201A60AF00088A18 /* ViewController.swift in Sources */,
 				FD5C089D201A60AF00088A18 /* AppDelegate.swift in Sources */,
+				FDE51B35201CB800006041D5 /* RepoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
