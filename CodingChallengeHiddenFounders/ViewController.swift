@@ -13,48 +13,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var reposTableOutlet: UITableView!
     
     var repositories = 0
+    var reposItems = 0
     var repoName = [String]()
     var repoDescription = [String]()
     var ownerImageUrl = [String]()
     var ownerName = [String]()
     var totalStars = [Float]()
+    
+    var header = "Trending Repos"
 
     var currentPage = 1
-    
-   
-    struct GitHubDescription: Decodable {
-        let items: [GitHub]
-    }
-    
-    struct Owner: Decodable {
-        let login: String
-        let avatar_url: String
-    }
 
-    struct GitHub: Decodable {
-        let name: String
-        let owner: Owner
-        let description: String?
-        let stargazers_count: Float
-    }
-    
-  
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         apiTask()
-    
-        
-       
-    }
-    
-  
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+  
     
     func apiTask() {
         
@@ -64,7 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            guard let data = data else { return }
+            guard let data = data else {  return }
             
             
             do {
@@ -75,8 +51,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 DispatchQueue.main.sync {
                     
                     self.repositories = repos.items.count - 1
+                    self.reposItems = repos.items.count
                     
-                    for x in 0...self.repositories{     //to enter data on the arrays.
+                    for x in 0..<repos.items.count{     //to enter data on the arrays.
                         
                     
                         self.repoName.append(repos.items[x].name)
@@ -104,6 +81,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
             }.resume()
     }
+    
+
+
     
     //MARK: TableView
     
@@ -146,7 +126,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let textHeader: UILabel = UILabel(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 50))
         if ownerName.isEmpty == false { //This is for the first time, to not set it before data is loaded
-            textHeader.text = "Trending Repos"
+            textHeader.text = header
             headerView.backgroundColor = UIColor.gray
         }
         
